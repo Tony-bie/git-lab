@@ -10,10 +10,12 @@ Classwork with titles on github
 <h2>Content</h2>
 <h3>Images</h3>
 
+![base-octocat](base-octocat.svg)
+
 
 <h2>References</h2>
 
-![base-octocat](base-octocat.svg)
+
 
 
 
