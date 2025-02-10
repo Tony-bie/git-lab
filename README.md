@@ -9,10 +9,12 @@ Classwork with titles on github
 
 <h2>Content</h2>
 <h3>Images</h3>
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, 
-of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)
+![base-octocat](https://github.com/user-attachments/assets/a462cbd1-73a1-4e08-9906-36f45177aa85)
+
 
 <h2>References</h2>
+
+
 
 
 
