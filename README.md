@@ -12,6 +12,13 @@ Classwork with titles on github
 
 ![base-octocat](base-octocat.svg)
 
+<h3>Code examples</h3>
+
+````python
+suma = 4+2
+print("suma")
+````
+
 
 <h2>References</h2>
 
