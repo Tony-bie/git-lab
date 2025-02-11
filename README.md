@@ -19,6 +19,12 @@ suma = 4+2
 print("suma")
 ````
 
+<h3>Lists</h3>
+
+- Turn on GitHub Pages
+- Outline my portfolio
+- Introduce myself to the world
+
 
 <h2>References</h2>
 
