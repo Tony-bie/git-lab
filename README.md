@@ -12,6 +12,8 @@ Classwork with titles on github
 
 ![base-octocat](base-octocat.svg)
 
+![Bob-Esponja](BobEsponja.webp)
+
 <h3>Code examples</h3>
 
 ````python
@@ -28,7 +30,9 @@ print("suma")
 
 <h2>References</h2>
 
-![Bob-Esponja](BobEsponja.webp)
+[Github docuemntation](https://docs.github.com/en)
+[Github glossary](https://docs.github.com/en/get-started/learning-about-github/github-glossary)
+[Git documentation](https://git-scm.com/doc)
 
 
 
