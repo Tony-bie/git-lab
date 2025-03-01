@@ -1,0 +1,28 @@
+h1{
+    color: #0000ff ;
+    border: black 3px solid;
+    padding: 10px;
+    margin: 10px;
+}
+body{
+    border: black 3px solid;
+    margin: 10;
+}
+header{
+    border: red 3px dotted;
+    border-radius: 200px;
+    padding: 20px;
+}
+nav{
+    border: orange 3px solid;
+    background-image: url("../images");
+    color:white;
+}
+
+footer{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    border: green 3px solid;
+    background-color: lightblue;
+}

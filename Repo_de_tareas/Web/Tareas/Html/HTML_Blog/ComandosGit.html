@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang = "es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="blog_css.css">
+    <title>Comandos de git/github</title>
+</head>
+<body>
+<header>
+<h1>Comandos de git/github</h1>
+</header>
+<h2>Proceso para subir un archivo y sus funciones</h2>
+    <ol>
+    <li><h3>Git add</h3></li>
+        <p>Este comando lo que hace es darle seguimiento los cambios hechos en el repositorio</p>
+    <h4>Variantes:</h4>
+    <table>
+        <tr>
+            <th>Git add {name}</th>
+            <th>Git add .</th>
+        </tr>
+        <tr>
+            <td>
+                Sigue los cambios hechos de un <br>
+                <u>archivo específico</u>
+            </td>
+            <td>
+                Sigue los cambios hechos<BR> de <u>todos los archivos</u>
+            </td>
+        </tr>
+    </table>
+    <Li><h3>Git commit -m {Comment}</h3></Li>
+        <p>Este comando tras usar el git add, comenta los cambios hecho
+        de un repositorio, muy útil para aclarar que cambios se hicieron.
+        </p>
+
+    <li><h3>Git push</h3></li>
+        <p>Este comando es el proceso final, es para guardar los cambios hechos
+            y subirlo tanto a tu repositorio local como en línea.
+        </p>
+    </ol>
+<h2>Como crear branches y sus funciones</h2> 
+<p>Un branch permite trabajar en diferentes versiones sin afectar la versión original,<br>
+    con tal de no hacer cambios que puedan afectar a la versión original
+</p>
+<img width=350 height=200 src="git-branches-merge.png" alt="Branches">
+<ol>
+    <li><h3>Git branch</h3></li>
+    <p>Te muestra todos los branches creados</p>
+    <li><h3>Git branch {nombre}</h3></li>
+    <P>Crea un branch con el nombre que pusiste</P>
+    <li><h3>Git switch {name}</h3></li>
+    <p>Te permite moverte entre cada branch</p>
+    <li><h3>Git push -u origin {name}</h3></li>
+    <p>Te permite guardar los cambios y subirlo a los repositorios dentro de un branch</p>
+</ol>
+<h2>Otras funciones</h2>
+<ul>
+    <li><h3>Git pull</h3></li>
+    <p>Lo que hace es tomar los cambios hechos en el repositorio de github al repositorio local</p>
+    <li><h3>Git status</h3></li>
+    <p>Te dice que archivos tienen seguimientos y cuales no</p>
+    <li><h3>Git log</h3></li>
+    <P>Con esto puedes ver el historial de comandos usados durante la vida del repositorio</P>
+</ul>
+    <a href="Html_blog.html">Regresar al menú</a>
+    </h4>
+</body>
+</html>
