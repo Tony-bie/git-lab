@@ -8,12 +8,10 @@ h1{
     padding: 10px;
     width: 300px; 
     height: 70px;
-    color: white;
 }
 
 ul{
     list-style: circle;
-    color: white;
     margin:10px;
     padding: 20px
 }
@@ -23,31 +21,26 @@ h2{
     font: bold  20px 'Times New Roman', serif;
     padding: 5px;
     width: 200px;
-    color: white;
 }
 h3{
     width: 300px;
     font: bold 'Times New Roman';
     margin:5px;
     padding: 2px;
-    color: white;
 }
 h4{
-    font: bold  15px 'Times New Roman';
-    color: white;
+    font: bold  18px 'Times New Roman';
+    font-style: italic;
 }
 
 p{
-    font: 14px 'Times New Roman';
-    color: white;
+    font: 12px 'Times New Roman';
 }
 .main {
     border-bottom: 3px solid black;
     border-radius: 3px;
     font: bold  315x 'Times New Roman', serif;
     width: 150px; 
-    color: white;
-
 }
 
 .css{
@@ -60,13 +53,4 @@ p{
     padding: 10px;
     width: 200px; 
     height: 30px;
-    color: white;
-}
-
-body{
-    background-color: rgb(171,13,37);
-}
-
-table{
-    color: white;
 }
