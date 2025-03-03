@@ -1,0 +1,45 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: gray;
+    padding: 10px 20px;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+#subscribeSectionform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: gray;
+}
+
+#imageSection {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+}
+
+#WebDevelop {
+    background-color: orange;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: gray;
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+
