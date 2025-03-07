@@ -2,10 +2,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: gray;
+    background-color: RGB(4,22,86);
     padding: 10px 20px;
+    color: white;
 }
 
+body{
+    width: 100%;
+}
 header nav {
     display: flex;
     gap: 20px;
@@ -16,8 +20,10 @@ header nav {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 10px;
-    background-color: gray;
+    padding: 30px;
+    background-color: RGB(4,22,86);
+    color: white;
+
 }
 
 #imageSection {
@@ -28,16 +34,20 @@ header nav {
     margin: 20px;
 }
 
+#Webtitle{
+    text-align: center;
+}
 #WebDevelop {
     background-color: orange;
     padding: 20px;
-    text-align: center;
+    color: white;
 }
 
 footer {
-    background-color: gray;
+    background-color: RGB(4,22,86);
     text-align: center;
     padding: 10px;
+    color: white;
 }
 
 
