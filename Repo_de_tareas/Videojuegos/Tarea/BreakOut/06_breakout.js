@@ -11,6 +11,9 @@ const initialSpeed = 0.5;
 
 let ctx;
 
+let gameOver = false;
+let win = false;
+
 class Ball extends GameObject {
     constructor(position, width, height, color) {
         super(position, width, height, color, "ball");
@@ -32,7 +35,7 @@ class Ball extends GameObject {
 
     reset() {
         this.inPlay = false;
-        this.position = new Vec(canvasWidth / 2, canvasHeight / 2);
+        this.position = new Vec(canvasWidth -417, canvasHeight / 2);
         this.velocity = new Vec(0, 0);
     }
 }
@@ -87,20 +90,38 @@ function initBricks() {
         for (let r = 0; r < brickRows; r++) {
             let brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
             let brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
-            bricks[c][r] = new Brick(new Vec(brickX, brickY), brickWidth, brickHeight, "blue");
+            bricks[c][r] = new Brick(new Vec(brickX, brickY), brickWidth, brickHeight, colorAleatorio());
         }
     }
 }
 
+function aleatorio(inferior, superior) {
+    let numPosibilidades = superior - inferior;
+    let aleatorio = Math.random() * numPosibilidades;
+    aleatorio = Math.floor(aleatorio);
+    return parseInt(inferior) + aleatorio;
+}
 
-const ball = new Ball(new Vec(canvasWidth / 2, canvasHeight / 2), 20, 20, "red");
-const paddle = new Paddle(new Vec(canvasWidth / 2, canvasHeight - 50), 100, 20, "blue");
-const topBar = new GameObject(new Vec(0, 0), canvasWidth, 20, "black", "obstacle");
+function colorAleatorio(){
+    let hexadecimal = new Array ("0", "1", "2", "3", "4", "5", "6",
+        "7", "8", "9", "A", "B", "C", "D", "E", "F");
+        let color_aleatorio="#";
+        for (let i = 0; i < 6; i++) {
+            let posarray = aleatorio(0, hexadecimal.length)
+            color_aleatorio += hexadecimal[posarray]
+          }
+        return color_aleatorio; 
+}
+
+
+const ball = new Ball(new Vec(canvasWidth -417, canvasHeight / 2), 20, 20, "red");
+const paddle = new Paddle(new Vec(canvasWidth -450, canvasHeight - 50), 100, 20, "blue");
+const topBar = new GameObject(new Vec(0, 0), canvasWidth, 20, "white", "obstacle");
 const bottomBar = new GameObject(new Vec(0, canvasHeight - 20), canvasWidth, 20, "red", "obstacle");
-const leftBar = new GameObject(new Vec(0, 0), 20, canvasHeight, "black", "left");
-const rightBar = new GameObject(new Vec(canvasWidth - 20, 0), 20, canvasHeight, "black", "right");
-const scoreLabel = new TextLabel(10, 30, "20px Arial", "white");
-const livesLabel = new TextLabel(canvasWidth - 100, 30, "20px Arial", "white");
+const leftBar = new GameObject(new Vec(0, 0), 20, canvasHeight, "white", "left");
+const rightBar = new GameObject(new Vec(canvasWidth - 20, 0), 20, canvasHeight, "white", "right");
+const scoreLabel = new TextLabel(canvasWidth-670, 200, "20px Arial", "white");
+const livesLabel = new TextLabel(canvasWidth -200, 200, "20px Arial", "white");
 const gameOverLabel = new TextLabel(canvasWidth / 2 - 100, canvasHeight / 2, "40px Arial", "red");
 const repeat =  new TextLabel(canvasWidth / 2 - 100, canvasHeight / 2 + 100, "30px Arial", "white");
 
@@ -124,9 +145,10 @@ function resetGame(){
     score=0;
     lives=3;
     ball.reset();
-    paddle.position= new Vec(canvasWidth / 2, canvasHeight - 50);
+    paddle.position= new Vec(canvasWidth -450, canvasHeight - 50);
     initBricks();
     gameOver=false;
+    win=false;
 }
 
 function createEventListeners() {
@@ -135,6 +157,9 @@ function createEventListeners() {
             paddle.velocity = new Vec(-paddleVelocity, 0);
         } else if (event.code == 'ArrowRight') {
             paddle.velocity = new Vec(paddleVelocity, 0);
+        }
+        else if (event.key == 'r' && !ball.inPlay) {
+            resetGame();
         }
     });
 
@@ -145,10 +170,6 @@ function createEventListeners() {
 
         if (event.key == 's' && !ball.inPlay) {
             ball.initVelocity();
-        }
-
-        if (event.key == 'r' && !ball.inPlay) {
-            resetGame();
         }
     });
 }
@@ -162,7 +183,16 @@ function drawScene(newTime) {
 
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
+    if (gameOver) {
+        gameOverLabel.draw(ctx, "Game Over");
+        repeat.draw(ctx, "Press 'R' to Restart");
+    }
+    else if (win){
+        gameOverLabel.draw(ctx, "You Win!");
+        repeat.draw(ctx, "Press 'R' to Restart");
+    }
 
+    else {
     leftBar.draw(ctx);
     rightBar.draw(ctx);
     topBar.draw(ctx);
@@ -178,10 +208,10 @@ function drawScene(newTime) {
         }
     }
 
+
     scoreLabel.draw(ctx, `Score: ${score}`)
     livesLabel.draw(ctx, `Lives: ${lives}`)
-
-
+    
     ball.update(deltaTime);
     paddle.update(deltaTime);
 
@@ -195,8 +225,7 @@ function drawScene(newTime) {
         ball.reset();
         lives--;
         if (lives==0){
-            gameOverLabel.draw(ctx, "Game Over");
-            return;
+            gameOver=true;
         }
     }
 
@@ -212,12 +241,15 @@ function drawScene(newTime) {
         }
     }
 
+
+
     if (score >= brickRows * brickCols *10){
-        gameOverLabel.draw(ctx, "You Win!");
-        return;
+        win=true;
     }
+}
 
     oldTime = newTime;
     requestAnimationFrame(drawScene);
 }
+main();
 

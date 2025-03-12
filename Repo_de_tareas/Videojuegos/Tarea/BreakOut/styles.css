@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: White;
+    background-color: gray;
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
@@ -39,14 +39,14 @@ h1{
 canvas {
     /* width: 75vw; */
     /* height: 75vh; */
-    border: 2px solid black;
+    border: 2px solid gray;
     background-color: #87ceeb;
     /* width: 600px; */
     /* height: 600px; */
 }
 
 #canvas {
-  background-color: #87ceeb;
+  background-color: black;
   grid-area: main;
 }
 
